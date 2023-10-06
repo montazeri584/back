@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body>
+    <div class="form">
+        <input type="text" id="name" placeholder="name"> <br>
+        <input type="text" id="age" placeholder="age"> <br>
+        <input type="text" id="user" placeholder="user"> <br>
+        <input type="text" id="pass" placeholder="pass"> <br>
+        <button onclick="post()">signup</button>
+    </div>
+</body>
+<script>
+    function post() {
+        const value_name = document.getElementById("name").value;
+        const value_age = document.getElementById("age").value;
+        const value_user = document.getElementById("user").value;
+        const value_pass = document.getElementById("pass").value;
+
+        const req = {
+            name: value_name, 
+            age: value_age, 
+            user: value_user, 
+            pass: value_pass, 
+        }
+
+        const http = new XMLHttpRequest();
+        http.open("POST", "back_end/user_post.php");
+        http.send(JSON.stringify(req));
+        http.onload = function() {
+            const data = http.responseText;
+            console.log(data);
+        }
+        http.onerror = function() {
+            console.log("err");
+        }
+    }
+</script>
+</html>
