@@ -12,30 +12,6 @@
         <button onclick="post()">signup</button>
     </div>
 </body>
-<script>
-    function post() {
-        const value_user = document.getElementById("user").value;
-        const value_pass = document.getElementById("pass").value;
 
-        const req = {
-            user: value_user, 
-            pass: value_pass, 
-        }
 
-        const http = new XMLHttpRequest();
-        http.open("POST", "back_end/user_test.php");
-        http.send(JSON.stringify(req));
-        http.onload = function() {
-            const data = http.responseText;
-            if (data == "true") {
-                location.href = "asly.html";
-            } else {
-                location.href = "login.html";
-            }
-        }
-        http.onerror = function() {
-            console.log("err");
-        }
-    }
-</script>
 </html>
