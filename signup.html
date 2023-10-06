@@ -6,13 +6,13 @@
     <title>signup</title>
 </head>
 <body>
-    <div class="form">
-        <input type="text" id="name" placeholder="name"> <br>
-        <input type="text" id="age" placeholder="age"> <br>
-        <input type="text" id="user" placeholder="user"> <br>
-        <input type="text" id="pass" placeholder="pass"> <br>
+    <form class="form" method="post" action="./back_end/user_post.php">
+        <input type="text" id="name" placeholder="name" name="name"> <br>
+        <input type="text" id="age" placeholder="age" name="age"> <br>
+        <input type="text" id="user" placeholder="user" name="user"> <br>
+        <input type="text" id="pass" placeholder="pass" name="pass"> <br>
         <button onclick="post()">signup</button>
-    </div>
+    </form>
 </body>
 
 </html>
